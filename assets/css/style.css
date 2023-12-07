@@ -1,0 +1,60 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url(../css/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf);
+}
+
+body {
+    background-color: #506ee5;
+}
+
+.container-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    justify-content: center;
+    width: 80%;
+    height: 90%;
+    border-radius: 20px;
+    /* PARA BOX-SHADOW FOI UTILIZADO O SITE CSSmatic */
+    -webkit-box-shadow: 11px 10px 5px -4px rgba(37, 37, 37, 0.81);
+    -moz-box-shadow: 11px 10px 5px -4px rgba(20, 20, 20, 0.81);
+    box-shadow: 11px 10px 5px -4px rgba(94, 94, 94, 0.81);
+}
+
+.container-flex {
+    display: flex;
+    
+}
+
+.container-left {
+    flex-direction: row;
+}
+
+.container-right {
+    flex-direction: row;
+    margin-top: 70px;
+    margin-left: 40px;
+}
+
+.img-cad {
+    height: 40em;
+    width: 40em;
+}
+
+.textoImg {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    color: #68b2f8;
+    font-family: Comfortaa;
+    font-size: 48px;
+}
+
+.subtitulo {
+    font-family: Comfortaa;
+    font-size: 16px;
+}
