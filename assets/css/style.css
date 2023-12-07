@@ -3,6 +3,8 @@
     src: url(../css/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf);
 }
 
+
+
 body {
     background-color: #506ee5;
 }
@@ -14,7 +16,7 @@ body {
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     justify-content: center;
-    width: 80%;
+    width: 70em;
     height: 90%;
     border-radius: 20px;
     /* PARA BOX-SHADOW FOI UTILIZADO O SITE CSSmatic */
@@ -115,4 +117,11 @@ input:active {
 
 .btnEnviar:active {
     background-color: #506ee5;
+}
+
+.feedback {
+    color: red;
+    font-family: Comfortaa;
+    margin-bottom: 4px;
+    font-size: 14px;
 }
