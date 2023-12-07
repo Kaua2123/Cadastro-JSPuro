@@ -25,7 +25,7 @@ body {
 
 .container-flex {
     display: flex;
-    
+
 }
 
 .container-left {
@@ -39,7 +39,7 @@ body {
 }
 
 .img-cad {
-    height: 40em;
+    height: 100%;
     width: 40em;
 }
 
@@ -57,4 +57,62 @@ body {
 .subtitulo {
     font-family: Comfortaa;
     font-size: 16px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: Comfortaa;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 24px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    font-size: 14px;
+    font-family: Comfortaa;
+}
+
+input:hover {
+    border: 1px solid #506ee5;
+}
+
+input:active {
+    border: 1px solid #68b2f8;
+}
+
+.btnEnviar {
+    border: 0px solid;
+    cursor: pointer;
+    background-color: #506ee5;
+    color: white;
+    font-size: 18px;
+    margin-top: 8px;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 100px;
+    -webkit-box-shadow: 14px 10px 5px -3px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 14px 10px 5px -3px rgba(0, 0, 0, 0.13);
+    box-shadow: 14px 10px 5px -3px rgba(0, 0, 0, 0.13);
+    border-radius: 8px;
+}
+
+.btnEnviar:hover {
+    background-color: #68b2f8;
+    transition: 0.2s;
+    height: 36px;
+    width: 105px;
+}
+
+.btnEnviar:active {
+    background-color: #506ee5;
 }
