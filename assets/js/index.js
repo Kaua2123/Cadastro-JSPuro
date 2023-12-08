@@ -74,7 +74,12 @@ class ValidaCpf {
     }
     
     validandoCpf() {
-        
+    
+        if (this.cpf.length != 11) {
+            console.log('CPF Inválido. Deve ter 11 caracteres.')
+            return 'CPF Inválido. Deve ter 11 caracteres.'
+        };
+
         this.limpaCpf(this.cpf)
         this.encontraPrimeiroDigito(this.cpf);
         this.encontraSegundoDigito(this.cpf);
@@ -87,12 +92,12 @@ class ValidaCpf {
         console.log(this.primeiroDigito, this.segundoDigito);
         
 
-        if(this.cpfArray.length != 11 || this.primeiroDigito != this.cpfArray[9] || this.segundoDigito != this.cpfArray[10]){
-            console.log('cpf inválido!')
-            return 'CPF Inválido!';
+        if(this.primeiroDigito != this.cpfArray[9] || this.segundoDigito != this.cpfArray[10]){
+            console.log('CPF Inválido')
+            return;
         } 
         else {
-            console.log('cpf válido!')
+            console.log('CPF Válido')
             return;
         }
         
@@ -141,6 +146,8 @@ class ValidaFormulario {
         this.validaInputSenha();
         this.validaInputUsuario();
         this.validaInputCpf();
+        //mensagem de retorno indicando que tudo está correto para o usuário
+        this.mensagemDeRetorno();
     }
     
     validaInputCpf() {
@@ -170,9 +177,12 @@ class ValidaFormulario {
             this.feedback.appendChild(this.div);
             return;
         }
+    }
 
-        
-
+    mensagemDeRetorno() {
+        if (this.nome.value, this.sobrenome.value, this.cpf.value, this.usuario.value, this.senha.value) {
+            alert('Tudo certo!')
+        }
     }
 
 
