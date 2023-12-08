@@ -120,7 +120,7 @@ class ValidaFormulario {
 
     eventos() {
         this.formulario.addEventListener('submit', (e) => {
-            this.evitarSubmit(e);
+            this.controlarSubmit(e);
             this.verificaInputVazioEValidaCampos();
 
         });
@@ -128,9 +128,13 @@ class ValidaFormulario {
         
     }
 
-    evitarSubmit(e) {
+    controlarSubmit(e) {
         e.preventDefault();
         console.log('Formulário não enviado.')
+        if (this.nome.value, this.sobrenome.value, this.cpf.value, this.usuario.value, this.senha.value){
+            alert('Tudo certo! Formulário enviado.');
+            this.formulario.submit();
+        } 
     }
 
    
@@ -152,8 +156,6 @@ class ValidaFormulario {
         this.validaInputSenha();
         this.validaInputUsuario();
         this.validaInputCpf();
-        //mensagem de retorno indicando que tudo está correto para o usuário
-        this.mensagemDeRetorno();
     }
     
     validaInputCpf() {
@@ -164,6 +166,7 @@ class ValidaFormulario {
     }
 
     validaInputUsuario() {
+        
         //Verificando a quantidade de caracteres
         if (this.usuario.value.length < 3 || this.usuario.value.length > 12) {
             this.div.innerText = 'Usuário deve ter entre 3 e 12 caracteres.'
@@ -171,7 +174,7 @@ class ValidaFormulario {
 
         }
 
-        if (this.usuario.value.includes(".") || this.usuario.value.includes("/",) || this.usuario.value.includes(";") || this.usuario.value.includes(",")) {
+        if (!this.usuario.value.match(/^[a-zA-Z0-9]+$/g)) {
             this.div.innerText = 'Usuário inválido.'
             this.feedback.appendChild(this.div);
         }
@@ -187,12 +190,7 @@ class ValidaFormulario {
         }
     }
 
-    mensagemDeRetorno() {
-        if (this.nome.value, this.sobrenome.value, this.cpf.value, this.usuario.value, this.senha.value){
-            alert('Tudo certo!')
-            this.feedback.removeChild(this.div);
-        } 
-    }
+
 
 }   
 const formulario = new ValidaFormulario();
