@@ -77,7 +77,7 @@ class ValidaCpf {
     
         if (this.cpf.length != 11) {
             console.log('CPF Inválido. Deve ter 11 caracteres.')
-            return 'CPF Inválido. Deve ter 11 caracteres.'
+            return;
         };
 
         this.limpaCpf(this.cpf)
@@ -121,8 +121,8 @@ class ValidaFormulario {
     eventos() {
         this.formulario.addEventListener('submit', (e) => {
             this.evitarSubmit(e);
-            this.verificaInputVazioEValidaCampos(e);
-            this.validaInputCpf(e);
+            this.verificaInputVazioEValidaCampos();
+
         });
 
         
@@ -134,10 +134,16 @@ class ValidaFormulario {
     }
 
    
-    verificaInputVazioEValidaCampos(e) {
+    verificaInputVazioEValidaCampos() {
          //verificando se algum campo está vazio e retornando o feedback
         if (this.nome.value == "" || this.sobrenome.value == "" || this.cpf.value == "" || this.usuario.value == "" || this.senha.value == "") {
             this.div.innerText = 'Preencha todos os campos.'
+            this.feedback.appendChild(this.div);
+            return;
+        }
+        
+        if(this.cpf.value.length != 11) {
+            this.div.innerText = 'CPF Inválido!'
             this.feedback.appendChild(this.div);
             return;
         }
@@ -151,8 +157,10 @@ class ValidaFormulario {
     }
     
     validaInputCpf() {
+
       this.cpf = new ValidaCpf(this.cpf.value);
       this.cpf.validandoCpf();
+    
     }
 
     validaInputUsuario() {
@@ -175,18 +183,16 @@ class ValidaFormulario {
         if (this.senha.value.length < 6 || this.senha.value.length > 12) {
             this.div.innerText = 'A senha deve ter entre 6 e 12 caracteres.'
             this.feedback.appendChild(this.div);
-            return;
+
         }
     }
 
     mensagemDeRetorno() {
-        if (this.nome.value, this.sobrenome.value, this.cpf.value, this.usuario.value, this.senha.value) {
+        if (this.nome.value, this.sobrenome.value, this.cpf.value, this.usuario.value, this.senha.value){
             alert('Tudo certo!')
-        }
+            this.feedback.removeChild(this.div);
+        } 
     }
 
-
-
 }   
-
 const formulario = new ValidaFormulario();
