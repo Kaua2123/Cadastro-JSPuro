@@ -1,5 +1,4 @@
-Tela de Cadastro utilizando meus conhecimentos em HTML, CSS
-Javascirpt usado na validação dos campos
+Tela de Cadastro utilizando meus conhecimentos em HTML, CSS e Javascript
 
 ---------------------------------------------------------------------------------------------------------------------
 
